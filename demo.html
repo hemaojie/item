@@ -1,0 +1,23 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>多图片上传</title>
+<script language="javascript" type="text/javascript">
+function AddInput(){
+	var input=document.createElement('input');//创建一个input节点
+	var br=document.createElement('br');//创建一个br节点
+	input.setAttribute('type','file');//设置input节点type属性为file
+	input.setAttribute('name','files[]');//设置input节点name属性为files[]，以 数组的方式传递给服务器端
+	document.myForm.appendChild(br);//把节点添加到form1表单中
+	document.myForm.appendChild(input);
+}
+</script>
+</head>
+<body>
+<form name="myForm" enctype="multipart/form-data" method="POST" action="upload.php">
+<input type="file" name="files[]">
+<input type="submit" name="submit" value="上传"><a href="#" onclick="AddInput()">添加图片</a>
+</form>
+</body>
+</html>
